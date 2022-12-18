@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>DATA 211</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+</head>
+<body style='background-color:#ceb59f; color:black'>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-brown w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>DATA 211<br>Ninjin & Sofia</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#introduction" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Introduction</a> 
+    <a href="#data" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Data & Methods</a> 
+    <a href="#graphs" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Graphs</a> 
+    <a href="#maps" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Interactive Maps</a> 
+    <a href="#conclusion" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Conclusion & Future Works</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-brown w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-brown w3-margin-right" onclick="w3_open()">☰</a>
+  <span>DATA 211</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 class="w3-jumbo w3-text-white"><b>Economic Conflict in the World</b></h1>
+  </div>
+
+  <!-- Introduction -->
+  <div class="w3-container" id="introduction" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-brown"><b>Introduction</b></h1>
+    <hr style="width:50px;border:5px solid white" class="w3-round">
+    <p> Out of all the regions, Africa is experiencing the highest rate of population growth and rapid urbanization. 
+      However, with low income, there are not enough employment opportunities for the growing population, which is 
+      becoming a problem and leading to high and persistent unemployment rates. Educated people are forced to seek 
+      marginal employment, which traps them in poverty and is leading to overall economic and political instability 
+      across Africa. The goal of this project is to see the correlation between better labor market outcomes and 
+      living standards in mediating social conflict, comparing Africa with the rest of the world. We also want 
+      to show the changes in urbanization, employment, and conflict over time.
+        </p>
+          
+  </div>
+
+  <!-- Data & Methods -->
+  <div class="w3-container" style="margin-top:80px" id="data">
+    <h1 class="w3-xxxlarge w3-text-brown"><b>Data & Methods</b></h1>
+    <hr style="width:50px;border:5px solid white" class="w3-round">
+    <p> The conflict data used for this project is from the 
+      <a href="https://ucdp.uu.se/">Uppsala Conflict Data Program</a>.
+      This dataset includes armed conflict when at least one party is government-related, intentional attacks on 
+      civilians by the government, and organized armed conflict when no parties are government-related. The 
+      <a href="https://databank.worldbank.org/source/population-estimates-and-projections#">predicted population growth</a>,
+      <a href="https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS">unemployment rates</a> ,and 
+      <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.CD">GDP</a> data were collected from the World Bank.
+      
+      <br></br>
+
+      These are all .csv files that we have imported to Google Colab using Pandas. The first step for preprocessing 
+      the data is to separate the dataset into 5 regions (Americas, Africa, Asia, Middle East, and Europe). After 
+      this, we use the data to plot graphs and maps using Plotly and matplotlib. We chose the years between 1989 and 
+      2021 for all datasets except predicted population growth, which was from 1989 to 2050.
+       </p>
+
+  </div>
+
+  
+  <!-- Graphs -->
+  <div class="w3-container" id="graphs" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-brown"><b>Graphs</b></h1>
+    <hr style="width:50px;border:5px solid white" class="w3-round">
+    <p>The line graphs all show data across 5 global regions: Europe, the Middle East, Asia, Africa, and the Americas. </p>
+     <!-- Graphs -->
+    <div class="w3-row-padding">
+      <div class="w3-full">
+        <img src="/final/img/population.png" style="width:100%" onclick="onClick(this)" alt="Predicted Population">
+        <p> This line graph shows the predicted population growth rate for each global region from 1989-2050. From this graph, we can predict Africa will have a huge increase in population by 2050 (around 4 billion). All other regions are predicted to remain stable and there is no rapid growth. </p>
+        <img src="/final/img/unemp_graph.png" style="width:100%" onclick="onClick(this)" alt="Unemployment">
+        <p> This line graph shows the average unemployment rate for each global region per year from 1989-2021. In 2021, Africa saw a huge increase in its average unemployment rate, jumping from around 10% to almost 30%. While the rest of the world remains consistent, staying at around 5-10%. </p>
+        <img src="/final/img/gdp_graph.png" style="width:100%" onclick="onClick(this)" alt="GDP">
+        <p> This line graph shows the average GDP in current US$ for each global region per year from 1989-2021. GDP is a rough indicator of a country’s standard of living and poverty rates. An increase in GDP leads to better living standards and lower poverty rates, and vice versa. We can see that Africa is the only region that has not shown a significant increase in GDP, therefore in comparison with the rest of the world, Africa’s standard of living is very low.  </p>
+        <img src="/final/img/conflicts_graph.png" style="width:100%" onclick="onClick(this)" alt="Conflicts">
+        <p> This line graph shows the total number of conflicts for each global region per year from 1989-2021. Conflicts include armed violence events with both government and non-government involvement. Africa shows the highest number of conflicts across all years in comparison to the rest of the world.  </p>
+      </div>
+    </div>
+
+      <!-- Modal for full size images on click-->
+      <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+          <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+          <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+            <img id="img01" class="w3-image">
+            <p id="caption"></p>
+          </div>
+        </div>
+  </div>
+
+  <!-- Interactive Maps -->
+  <div class="w3-container" id="maps" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-brown"><b>Interactive Maps</b></h1>
+    <hr style="width:50px;border:5px solid white" class="w3-round">
+      <p> These maps were created through the Python library plotly. You can use the slider at the bottom to look through the years and see the changes in unemployment, GDP, and the number of conflicts. They reiterate the ideas shown through the line graphs above. </p>
+    <iframe src="map_unemp_slider.html" style="height:710px;width:1000px;" title="Unemployment Slider Map"></iframe>
+    <p> </p>
+    <iframe src="map_gdp_slider.html" style="height:710px;width:1000px;" title="GDP Slider Map"></iframe>
+    <p> </p>
+    <iframe src="map_conflict_slider.html" style="height:710px;width:1000px;" title="Conflict Slider Map"></iframe>
+    <p> </p>
+  </div>
+
+
+  <!-- Conclusion & Future Works -->
+  <div class="w3-container" id="conclusion" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-brown"><b>Conclusion & Future Works</b></h1>
+    <hr style="width:50px;border:5px solid white" class="w3-round">
+    <p>In conclusion, Africa is currently experiencing a record-high unemployment rate. This, coupled with a non-increasing GDP and skyrocketing projected population growth, is not a good sign for the economic and social stability of the region. Through the graphs, we can see that Africa experiences the highest number of conflicts compared to the rest of the world and this could be correlated with its economic status. We cannot say that these are the only factors that go into conflicts for a region and there could be other reasons why Africa is experiencing significantly more conflict than the rest of the world. Future work for this project would involve trying to determine other factors that have a role in creating conflict. With the increasing population, these issues, particularly the unemployment and poverty rates, will not be resolved without change. However, we do not have the background to suggest solutions for alleviating the worsening economic situation in Africa. 
+</p>
+  </div>
+
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">DATA 211: Ninjin Gankhuleg & Sofia Huang</p></div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>
