@@ -1,0 +1,16 @@
+title: DATA 211
+description: Website for DATA 211 Final
+url: "http://ninjy.github.io" # the base hostname & protocol for your site
+
+markdown: kramdown
+highlighter: rouge
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Output settings
+permalink: pretty
+timezone: UTC
