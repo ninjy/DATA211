@@ -1,6 +1,6 @@
 title: DATA 211
 description: Website for DATA 211 Final
-url: "http://ninjy.github.io" # the base hostname & protocol for your site
+url: "http://ninjy.github.io/DATA211" # the base hostname & protocol for your site
 
 markdown: kramdown
 highlighter: rouge
